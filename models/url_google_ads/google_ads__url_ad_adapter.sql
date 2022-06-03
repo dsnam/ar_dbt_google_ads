@@ -49,7 +49,9 @@ with stats as (
         ads.utm_term,
         sum(stats.spend) as spend,
         sum(stats.clicks) as clicks,
-        sum(stats.impressions) as impressions
+        sum(stats.impressions) as impressions,
+        sum(stats.conversions) as conversions,
+        sum(stats.conversions_value) as conversions_value
 
         {% for metric in var('google_ads__ad_stats_passthrough_metrics') %}
         , sum(stats.{{ metric }}) as {{ metric }}
