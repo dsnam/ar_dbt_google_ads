@@ -4,7 +4,6 @@ config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
 models:
   google_ads:
-    +schema: google_ads
     +materialized: table
 vars:
   google_ads:
