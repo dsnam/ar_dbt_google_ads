@@ -1,4 +1,4 @@
-{{ config(enabled=var('api_source') == 'adwords') }}
+{{ config(enabled=var('api_source') == 'adwords' and var('ad_reporting__google_ads_enabled')) }}
 
 with base as (
 
