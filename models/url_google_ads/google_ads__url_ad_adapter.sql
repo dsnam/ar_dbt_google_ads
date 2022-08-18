@@ -21,7 +21,6 @@ with stats as (
     -- ad_stats lacks performance max since those are campaign level only
     select *
     from {{ var('campaign_stats') }}
-    where advertising_channel_type = "PERFORMANCE_MAX"
 
 ), ad_groups as (
 
@@ -101,6 +100,7 @@ with stats as (
     join campaigns on campaign_stats.campaign_id = campaigns.campaign_id
     left join accounts
         on campaign_stats.account_id = accounts.account_id
+    where campaigns.advertising_channel_type = "PERFORMANCE_MAX"
     {{ dbt_utils.group_by(15) }}
 
 
