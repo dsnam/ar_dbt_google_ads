@@ -82,7 +82,7 @@ with stats as (
         campaigns.campaign_name,
         campaign_stats.campaign_id,
         null as ad_group_name,
-        null as ad_group_id,
+        cast(null as {{ dbt_utils.type_int() }}) as ad_group_id,
         null as base_url,
         null as url_host,
         null as url_path,
