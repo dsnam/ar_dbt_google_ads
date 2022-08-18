@@ -1,2 +1,3 @@
 packages:
 - git: "https://github.com/dsnam/ar_dbt_google_ads_source"
+  revision: "alex/campaign-stats"
